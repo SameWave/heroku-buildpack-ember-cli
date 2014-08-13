@@ -45,9 +45,10 @@ cd $build_dir
 
 
 # install compass ---
-status "Installing Compass"
+status "Installing Gems"
 export GEM_HOME=$build_dir/.gem/ruby/1.9.1
 PATH="$GEM_HOME/bin:$PATH"
+status ruby -v
 if test -d $cache_dir/ruby/.gem; then
   status "Restoring ruby gems directory from cache"
   cp -r $cache_dir/ruby/.gem $build_dir
