@@ -83,5 +83,7 @@ npm install bower --quiet | indent
 npm install --quiet | indent
 
 status "Building Ember CLI application $build_env distribution"
+status "1"
 node_modules/.bin/bower install --quiet | indent
+status "2"
 node_modules/ember-cli/bin/ember build --environment $build_env | indent
