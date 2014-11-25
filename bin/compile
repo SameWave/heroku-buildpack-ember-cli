@@ -89,5 +89,5 @@ status "2"
 status $build_env
 status ls -l
 status ls -l node_modules/
-node_modules/ember-cli/bin/ember build --environment $build_env | indent
+# node_modules/ember-cli/bin/ember build --environment $build_env | indent
 status "3"
