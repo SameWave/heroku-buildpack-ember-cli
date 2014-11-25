@@ -17,7 +17,6 @@ build_env=${EMBER_ENV:-production}
 
 mkdir -p $build_dir/vendor
 status "Downloading and installing node"
-status $build_dir
 node_version=0.10.30
 node_url=http://s3pository.heroku.com/node/v$node_version/node-v$node_version-linux-x64.tar.gz
 curl $node_url -s -o - | tar xzf - -C $build_dir
@@ -83,11 +82,5 @@ npm install bower --quiet | indent
 npm install --quiet | indent
 
 status "Building Ember CLI application $build_env distribution"
-status "1"
 node_modules/.bin/bower install --quiet | indent
-status "2"
-status $build_env
-status ls -l
-status ls -l node_modules/
-# node_modules/ember-cli/bin/ember build --environment $build_env | indent
-status "3"
+node_modules/ember-cli/bin/ember build --environment $build_env | indent
