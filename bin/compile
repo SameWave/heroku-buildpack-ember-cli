@@ -87,7 +87,7 @@ status "1"
 node_modules/.bin/bower install --quiet | indent
 status "2"
 status $build_env
-status echo "ls -l"
-status echo "ls -l node_modules/"
+status ls -l
+status ls -l node_modules/
 node_modules/ember-cli/bin/ember build --environment $build_env | indent
 status "3"
