@@ -16,8 +16,8 @@ export_env_dir $env_dir
 build_env=${EMBER_ENV:-production}
 
 mkdir -p $build_dir/vendor
-
 status "Downloading and installing node"
+status $build_dir
 node_version=0.10.30
 node_url=http://s3pository.heroku.com/node/v$node_version/node-v$node_version-linux-x64.tar.gz
 curl $node_url -s -o - | tar xzf - -C $build_dir
